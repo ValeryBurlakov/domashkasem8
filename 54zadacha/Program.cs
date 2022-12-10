@@ -32,9 +32,10 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-Console.WriteLine("введите m");
+
+Console.WriteLine("введите m(строку):");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите n");
+Console.WriteLine("Введите n(стобец):");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 int [,] matrix = FillMatrix(m,n);
@@ -56,5 +57,6 @@ for (int k = 1; k < m * n; k++)
         }
     }
 }
+
 PrintMatrix(matrix);
 Console.WriteLine();

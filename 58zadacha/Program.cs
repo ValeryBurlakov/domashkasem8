@@ -39,7 +39,7 @@ Console.WriteLine("Введите n(столбец)");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 int [,] matrix = FillMatrix(m,n);
-PrintMatrix(matrix);
+
 Console.WriteLine();
 
 Console.WriteLine("Вторая матрица");
@@ -51,7 +51,7 @@ Console.WriteLine();
 int [,] matrix2 = FillMatrix(n2, p);
 
 int [,] matrix3 = new int[m, p];
-PrintMatrix(matrix2);
+
 Console.WriteLine();
 
 for (int i = 0; i < matrix.GetLength(0); i++)
@@ -64,6 +64,9 @@ for (int i = 0; i < matrix.GetLength(0); i++)
         }
     }
 }
-
+Console.WriteLine("Первая матрица:");
+PrintMatrix(matrix);
+Console.WriteLine("Вторая матрица:");
+PrintMatrix(matrix2);
 Console.WriteLine("Результат умножения двух матриц: ");
 PrintMatrix(matrix3);

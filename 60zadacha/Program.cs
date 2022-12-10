@@ -8,3 +8,70 @@
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
+
+void FillArray(int[,,] arr)
+{
+  int[] temp = new int[arr.GetLength(0) * arr.GetLength(1) * arr.GetLength(2)];
+  int  number;
+  for (int i = 0; i < temp.GetLength(0); i++)
+  {
+    temp[i] = new Random().Next(10, 100);
+    number = temp[i];
+    if (i >= 1)
+    {
+      for (int j = 0; j < i; j++)
+      {
+        while (temp[i] == temp[j])
+        {
+          temp[i] = new Random().Next(10, 100);
+          j = 0;
+          number = temp[i];
+        }
+          number = temp[i];
+      }
+    }
+  }
+
+  int count = 0; 
+  for (int x = 0; x < arr.GetLength(0); x++)
+  {
+    for (int y = 0; y < arr.GetLength(1); y++)
+    {
+      for (int z = 0; z < arr.GetLength(2); z++)
+      {
+        arr[x, y, z] = temp[count];
+        count++;
+      }
+    }
+  }
+}
+
+void PrintArray(int[,,] arr)
+{
+  for (int i = 0; i < arr.GetLength(0); i++)
+  {
+    for (int j = 0; j < arr.GetLength(1); j++)
+    {
+      for (int k = 0; k < arr.GetLength(2); k++)
+      {
+        Console.Write( $"{arr[i,j,k]}({i},{j},{k}) ");
+      }
+      Console.WriteLine();
+    }
+    Console.WriteLine();
+  }
+}
+
+Console.WriteLine($"Введите размер массива (X, Y, Z):");
+Console.WriteLine("Введите X:");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Y:");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Z:");
+int z = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"");
+
+int[,,] arr = new int[x, y, z];
+
+FillArray(arr);
+PrintArray(arr);
