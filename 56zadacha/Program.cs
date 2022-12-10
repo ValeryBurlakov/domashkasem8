@@ -68,11 +68,3 @@ for (int i = 1; i < matrix.GetLength(0); i++)
 }
 
 Console.WriteLine($"{minRow+1} - строкa с наименьшей суммой элементов");
-
-
-
-    
-
-
-
-

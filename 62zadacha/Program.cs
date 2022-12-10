@@ -39,7 +39,7 @@ while (number <= matrix.GetLength(0) * matrix.GetLength(1))
 
   matrix[i, j] = number;
   number++;
-  
+
   if (i <= j + 1 && i + j < matrix.GetLength(1) - 1) 
   {
     j++;
